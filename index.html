@@ -1,0 +1,597 @@
+<!doctype html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="theme-color" content="#fff0f3">
+    <title>12A2.1 &amp; Cô Quỳnh Anh - Chúc Mừng 20/10</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400;700&family=Great+Vibes&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+    body {
+        margin: 0;
+        font-family: Arial, sans-serif;
+    }
+
+    .font-script {
+        font-family: "Dancing Script", cursive;
+    }
+
+    .font-vibes {
+        font-family: "Great Vibes", cursive;
+    }
+
+/* Watermark background pattern for main page */
+    .watermark-bg {
+        background-image: radial-gradient(#fa4077 0.75px, transparent 0.75px), radial-gradient(#fa4077 0.75px, #fff0f3 0.75px);
+        background-size: 30px 30px;
+        background-position: 0 0, 15px 15px;
+        opacity: 0.95;
+    }
+
+    /* Floating animation for hearts */
+    @keyframes floatUp {
+        0% {
+            transform: translateY(0) scale(0.6) rotate(0deg);
+            opacity: 0;
+        }
+        20% {
+            opacity: 0.85;
+        }
+        100% {
+            transform: translateY(-500px) scale(1.3) rotate(360deg);
+            opacity: 0;
+        }
+    }
+
+    .floating-heart {
+        position: absolute;
+        animation: floatUp 5s ease-in-out infinite;
+        color: #fa4077;
+        pointer-events: none;
+        z-index: 10;
+    }
+
+    /* Biology DNA Float Animation */
+    @keyframes floatSlow {
+        0%, 100% { transform: translateY(0px) rotate(0deg); }
+        50% { transform: translateY(-12px) rotate(5deg); }
+    }
+
+    .biology-float {
+        animation: floatSlow 4s ease-in-out infinite;
+    }
+
+    .biology-float-reverse {
+        animation: floatSlow 5s ease-in-out infinite reverse;
+    }
+
+    /* Envelopes CSS */
+    .envelope-wrapper {
+        perspective: 1000px;
+    }
+    
+    .envelope {
+        position: relative;
+        width: 100%;
+        height: 190px;
+        background: #fecddb;
+        border-radius: 20px;
+        box-shadow: 0 10px 25px rgba(250, 64, 119, 0.15);
+        cursor: pointer;
+        transition: all 0.35s ease;
+        overflow: hidden;
+        border: 2px solid #ffa6be;
+    }
+
+    .envelope:hover {
+        transform: translateY(-8px) scale(1.02);
+        box-shadow: 0 18px 35px rgba(250, 64, 119, 0.25);
+    }
+
+    /* Flap of the envelope */
+    .envelope-flap {
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        height: 0;
+        border-left: 140px solid transparent;
+        border-right: 140px solid transparent;
+        border-top: 95px solid #ff7098;
+        transform-origin: top;
+        transition: transform 0.4s ease;
+        z-index: 3;
+    }
+
+    @media (min-width: 640px) {
+        .envelope-flap {
+            border-left-width: 220px;
+            border-right-width: 220px;
+            border-top-width: 105px;
+        }
+    }
+
+    .envelope-pocket {
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        height: 105px;
+        background: #ffa6be;
+        border-bottom-left-radius: 18px;
+        border-bottom-right-radius: 18px;
+        z-index: 2;
+    }
+
+    .envelope-seal {
+        position: absolute;
+        top: 80px;
+        left: 50%;
+        transform: translateX(-50%);
+        width: 44px;
+        height: 44px;
+        background: #e81d5f;
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: white;
+        box-shadow: 0 4px 10px rgba(0,0,0,0.18);
+        z-index: 4;
+        transition: transform 0.3s ease;
+    }
+
+    .envelope:hover .envelope-seal {
+        transform: translateX(-50%) scale(1.18) rotate(12deg);
+    }
+
+    /* Gentle Glow Effects */
+    @keyframes softGlow {
+        0%, 100% { box-shadow: 0 0 15px rgba(250, 64, 119, 0.3); }
+        50% { box-shadow: 0 0 30px rgba(250, 64, 119, 0.6); }
+    }
+    .glow-box {
+        animation: softGlow 3s infinite ease-in-out;
+    }
+
+    /* Custom scrollbar */
+    ::-webkit-scrollbar {
+        width: 8px;
+    }
+    ::-webkit-scrollbar-track {
+        background: #fff0f3;
+    }
+    ::-webkit-scrollbar-thumb {
+        background: #ffa6be;
+        border-radius: 4px;
+    }
+    ::-webkit-scrollbar-thumb:hover {
+        background: #fa4077;
+    }
+</style>
+</head>
+<body>
+
+
+<!-- Ambient floating hearts canvas / container -->
+<div id="hearts-container" class="fixed inset-0 pointer-events-none overflow-hidden z-20"></div>
+
+<!-- ================= 1. INTRO COVER SCREEN (MÀN HÌNH CHÀO MỪNG) ================= -->
+<section id="intro-screen" class="fixed inset-0 z-50 bg-gradient-to-br from-pink-50 via-rose-100 to-pink-200 flex flex-col justify-between items-center px-4 py-8 text-center transition-opacity duration-700 overflow-y-auto">
+    
+    <!-- Top Biology & Floral Decorative Row -->
+    <div class="w-full max-w-4xl flex justify-between items-center text-pink-400 opacity-80 pt-2">
+        <div class="flex items-center space-x-2 text-sm font-medium biology-float">
+            <i class="fa-solid fa-dna text-xl text-rose-500"></i>
+            <span class="hidden sm:inline">Biology 🧬 12A2.1</span>
+        </div>
+        <div class="text-2xl text-pink-500">
+            🌸 🌺 🌸
+        </div>
+        <div class="flex items-center space-x-2 text-sm font-medium biology-float-reverse">
+            <i class="fa-solid fa-microscope text-xl text-rose-500"></i>
+            <span class="hidden sm:inline">Cô Quỳnh Anh 🌿</span>
+        </div>
+    </div>
+
+    <!-- Center Card Content -->
+    <div class="my-auto py-8 max-w-2xl w-full bg-white/70 backdrop-blur-md rounded-3xl p-6 sm:p-10 border-2 border-pink-200 shadow-2xl relative overflow-hidden glow-box">
+        
+        <!-- Background Biology Leaf & DNA Graphic Overlays -->
+        <div class="absolute -top-10 -left-10 text-pink-200/40 text-9xl pointer-events-none biology-float">
+            <i class="fa-solid fa-leaf"></i>
+        </div>
+        <div class="absolute -bottom-10 -right-10 text-pink-200/40 text-9xl pointer-events-none biology-float-reverse">
+            <i class="fa-solid fa-dna"></i>
+        </div>
+
+        <!-- Biology Badge -->
+        <div class="inline-flex items-center space-x-2 bg-pink-100 border border-pink-300 text-pink-700 px-4 py-1.5 rounded-full text-xs sm:text-sm font-semibold mb-4 shadow-sm">
+            <span>🧬 Môn Sinh Học Với Yêu Thương ✨</span>
+        </div>
+
+        <!-- Big Title -->
+        <h1 class="font-vibes text-5xl sm:text-7xl text-pink-600 font-bold mb-2 drop-shadow-sm">
+            Lớp 12A2.1 & Cô Quỳnh Anh
+        </h1>
+        
+        <p class="text-rose-500 font-script text-2xl sm:text-3xl font-bold mb-6">
+            Tri Ân Ngày Phụ Nữ Việt Nam 20/10
+        </p>
+
+        <div class="w-24 h-1 bg-gradient-to-r from-pink-300 via-rose-400 to-pink-300 mx-auto rounded-full mb-6"></div>
+
+        <p class="text-gray-700 text-sm sm:text-base leading-relaxed mb-8 max-w-lg mx-auto font-normal">
+            Mỗi tế bào của tập thể <span class="font-bold text-pink-600">12A2.1</span> đều chứa đựng sự yêu thương, trân trọng và lòng biết ơn sâu sắc gửi tới cô giáo chủ nhiệm Quỳnh Anh kính yêu!
+        </p>
+
+        <!-- Unlock/Enter Button -->
+        <button onclick="enterMainSite()" class="group relative inline-flex items-center justify-center px-8 py-4 bg-gradient-to-r from-pink-500 via-rose-500 to-pink-600 text-white font-bold rounded-full text-base sm:text-lg shadow-xl hover:shadow-pink-300/50 hover:scale-105 transition-all duration-300 cursor-pointer">
+            <span class="mr-3">Khám Phá Thông Điệp ❤️</span>
+            <i class="fa-solid fa-arrow-right group-hover:translate-x-1.5 transition-transform"></i>
+        </button>
+    </div>
+
+    <!-- Bottom Bio & Floral Footer -->
+    <div class="text-xs text-pink-600/80 font-medium flex items-center space-x-3 pb-2">
+        <span>🌱 Tế Bào Yêu Thương</span>
+        <span>•</span>
+        <span>🧬 Mã Gen 12A2.1</span>
+        <span>•</span>
+        <span>🌸 Món Quà Dành Cho Cô</span>
+    </div>
+</section>
+
+<!-- ================= 2. MAIN PAGE CONTENT (TRANG CHÍNH) ================= -->
+<div id="main-content" class="watermark-bg hidden flex-col justify-between min-h-screen">
+    
+    <!-- Top Watermark Banner -->
+    <div class="bg-gradient-to-r from-pink-400 via-rose-400 to-pink-500 text-white py-2.5 px-4 text-center font-bold tracking-widest text-xs sm:text-sm shadow-md sticky top-0 z-40 flex items-center justify-center space-x-2 sm:space-x-4 overflow-hidden">
+        <span class="animate-pulse">🌸</span>
+        <span class="uppercase font-semibold drop-shadow">12A2.1 CẢ LỚP YÊU CÔ</span>
+        <span class="animate-pulse">🌸</span>
+        <span class="hidden md:inline font-normal text-pink-100">| Chúc Mừng Ngày Phụ Nữ Việt Nam 20/10 💖</span>
+    </div>
+
+    <!-- Main Body Area -->
+    <main class="max-w-5xl mx-auto px-4 py-8 md:py-12 z-10 w-full flex-grow">
+        
+        <!-- Hero Header Section -->
+        <header class="text-center mb-12 relative">
+            <div class="inline-block mb-3 px-6 py-1.5 bg-white/80 backdrop-blur-md rounded-full text-pink-600 font-semibold text-xs sm:text-sm shadow-sm border border-pink-200">
+                <i class="fa-solid fa-dna text-rose-500 mr-2 animate-bounce"></i> tụi em gửi cô Quỳnh Anh kính yêu
+            </div>
+            <h1 class="font-script text-5xl md:text-7xl lg:text-8xl text-pink-600 font-bold drop-shadow-sm mb-3 leading-tight">
+                Chúc Mừng 20/10
+            </h1>
+            <h2 class="text-xl md:text-3xl font-bold text-rose-700/90 mb-6">
+                Cô Giáo Chủ Nhiệm Của Tụi Em - 12A2.1
+            </h2>
+            <p class="max-w-2xl mx-auto text-gray-700 text-sm md:text-lg leading-relaxed bg-white/70 backdrop-blur-sm p-6 rounded-3xl shadow-sm border border-pink-100">
+                Nhân ngày Phụ Nữ Việt Nam 20/10, tập thể <span class="font-bold text-pink-600">12A2.1</span> gửi tới Cô Quỳnh Anh những tình cảm ngọt ngào nhất, chúc Cô luôn tươi trẻ, tràn đầy năng lượng và hạnh phúc mỗi ngày!
+            </p>
+            
+            <!-- Music Control Button -->
+            <div class="mt-6">
+                <button onclick="toggleMusic()" id="music-btn" class="px-5 py-2.5 bg-white hover:bg-pink-50 text-pink-600 font-medium rounded-full shadow-md border border-pink-200 transition-all transform hover:scale-105 flex items-center mx-auto space-x-2 text-xs sm:text-sm">
+                    <i id="music-icon" class="fa-solid fa-music text-rose-500 animate-spin"></i>
+                    <span id="music-text">Phát Nhạc Chúc Mừng (Lãng Mạn)</span>
+                </button>
+            </div>
+        </header>
+
+        <!-- 4 Interactive Envelopes Section -->
+        <section class="mb-16">
+            <div class="text-center mb-10">
+                <h3 class="text-2xl md:text-3xl font-bold text-pink-700 font-script inline-block border-b-2 border-pink-300 pb-1">
+                    4 Bức Thư Yêu Thương Đang Khóa Kín
+                </h3>
+                <p class="text-xs sm:text-sm text-pink-600 mt-2 font-medium bg-white/80 py-1.5 px-4 rounded-full inline-block shadow-sm border border-pink-100">
+                    ✨ Cô hãy bấm vào từng phong bì bên dưới để mở lá thư ra đọc nhé! ✨
+                </p>
+            </div>
+
+            <div class="grid grid-cols-1 sm:grid-cols-2 gap-8 max-w-4xl mx-auto">
+                
+                <!-- Envelope 1 -->
+                <div class="envelope-wrapper">
+                    <div onclick="openLetter(1)" class="envelope group">
+                        <div class="envelope-flap"></div>
+                        <div class="envelope-pocket"></div>
+                        <div class="envelope-seal">
+                            <i class="fa-solid fa-heart text-lg"></i>
+                        </div>
+                        <div class="absolute inset-0 flex flex-col justify-end p-4 z-10 text-center">
+                            <span class="font-bold text-pink-900 text-base drop-shadow-sm mb-1">Thư Số 01</span>
+                            <span class="text-xs text-pink-700 bg-white/90 py-1 px-3 rounded-full mx-auto font-semibold shadow-sm">✉️ Bấm để mở thư</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Envelope 2 -->
+                <div class="envelope-wrapper">
+                    <div onclick="openLetter(2)" class="envelope group">
+                        <div class="envelope-flap"></div>
+                        <div class="envelope-pocket"></div>
+                        <div class="envelope-seal">
+                            <i class="fa-solid fa-heart text-lg"></i>
+                        </div>
+                        <div class="absolute inset-0 flex flex-col justify-end p-4 z-10 text-center">
+                            <span class="font-bold text-pink-900 text-base drop-shadow-sm mb-1">Thư Số 02</span>
+                            <span class="text-xs text-pink-700 bg-white/90 py-1 px-3 rounded-full mx-auto font-semibold shadow-sm">✉️ Bấm để mở thư</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Envelope 3 -->
+                <div class="envelope-wrapper">
+                    <div onclick="openLetter(3)" class="envelope group">
+                        <div class="envelope-flap"></div>
+                        <div class="envelope-pocket"></div>
+                        <div class="envelope-seal">
+                            <i class="fa-solid fa-heart text-lg"></i>
+                        </div>
+                        <div class="absolute inset-0 flex flex-col justify-end p-4 z-10 text-center">
+                            <span class="font-bold text-pink-900 text-base drop-shadow-sm mb-1">Thư Số 03</span>
+                            <span class="text-xs text-pink-700 bg-white/90 py-1 px-3 rounded-full mx-auto font-semibold shadow-sm">✉️ Bấm để mở thư</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Envelope 4 -->
+                <div class="envelope-wrapper">
+                    <div onclick="openLetter(4)" class="envelope group">
+                        <div class="envelope-flap"></div>
+                        <div class="envelope-pocket"></div>
+                        <div class="envelope-seal">
+                            <i class="fa-solid fa-heart text-lg"></i>
+                        </div>
+                        <div class="absolute inset-0 flex flex-col justify-end p-4 z-10 text-center">
+                            <span class="font-bold text-pink-900 text-base drop-shadow-sm mb-1">Thư Số 04</span>
+                            <span class="text-xs text-pink-700 bg-white/90 py-1 px-3 rounded-full mx-auto font-semibold shadow-sm">✉️ Bấm để mở thư</span>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+        <!-- Family Photo & Gratitude Section -->
+        <section class="max-w-3xl mx-auto text-center mb-12">
+            <div class="bg-white/80 backdrop-blur-md rounded-3xl p-6 sm:p-8 shadow-xl border-4 border-pink-200 relative overflow-hidden">
+                <div class="absolute top-3 left-3 text-pink-300 text-2xl">🌸</div>
+                <div class="absolute top-3 right-3 text-pink-300 text-2xl">🌸</div>
+
+                <h3 class="text-2xl sm:text-3xl font-bold text-pink-700 font-script mb-2">
+                    Khoảnh Khắc Hạnh Húc Gia Đình Cô
+                </h3>
+                <p class="text-xs sm:text-sm text-gray-600 mb-6 italic">
+                    Kính chúc gia đình Cô Quỳnh Anh luôn luôn đong đầy tiếng cười và hạnh phúc viên mãn!
+                </p>
+
+                <!-- Photo Container with Decorative Border -->
+                <div class="relative rounded-2xl overflow-hidden shadow-2xl border-4 border-pink-300/80 p-2 bg-gradient-to-tr from-pink-100 to-rose-100">
+                    <img 
+                        src="1000004996.jpg" 
+                        alt="Gia đình Cô Quỳnh Anh" 
+                        class="w-full h-auto rounded-xl object-cover hover:scale-105 transition-transform duration-500"
+                        onerror="this.onerror=null; this.src='data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 800 1000%22%3E%3Crect width=%22800%22 height=%221000%22 fill=%22%23fff0f3%22/%3E%3Ctext x=%22400%22 y=%22500%22 text-anchor=%22middle%22 fill=%22%23e81d5f%22 font-size=%2236%22 font-family=%22sans-serif%22%3EImage unavailable%3C/text%3E%3C/svg%3E';"
+                    />
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-gradient-to-r from-pink-200 via-rose-200 to-pink-200 py-6 border-t border-pink-300 text-center z-10">
+        <p class="font-bold text-pink-800 text-sm sm:text-base mb-1">
+            Lớp 12A2.1 & Cô Quỳnh Anh - Mãi Mãi Một Gia Đình ❤️
+        </p>
+        <p class="text-xs text-pink-600">
+            Chúc Cô ngày 20/10 ngập tràn niềm vui, hoa tươi và những lời chúc ngọt ngào nhất!
+        </p>
+    </footer>
+</div>
+
+<!-- Interactive Letter Popup Modal -->
+<div id="letter-modal" class="fixed inset-0 bg-black/50 backdrop-blur-sm z-50 flex items-center justify-center p-4 hidden opacity-0 transition-opacity duration-300">
+    <div id="modal-box" class="bg-white rounded-3xl max-w-md w-full p-6 sm:p-8 shadow-2xl border-4 border-pink-300 transform scale-95 transition-transform duration-300 relative">
+        <button onclick="closeLetter()" class="absolute top-4 right-4 w-9 h-9 rounded-full bg-pink-100 hover:bg-pink-200 text-pink-700 flex items-center justify-center font-bold text-lg transition-colors">
+            <i class="fa-solid fa-xmark"></i>
+        </button>
+        <div class="text-center mb-4">
+            <div class="w-14 h-14 bg-pink-100 text-pink-600 rounded-2xl flex items-center justify-center mx-auto mb-3 text-2xl shadow-sm">
+                <i id="modal-icon" class="fa-solid fa-envelope-open-text"></i>
+            </div>
+            <h3 id="modal-title" class="font-bold text-xl text-pink-800">Lá Thư Yêu Thương</h3>
+            <span class="text-xs text-pink-500 font-medium">Gửi cô giáo Quỳnh Anh từ 12A2.1</span>
+        </div>
+        <div class="bg-pink-50/80 p-6 rounded-2xl border border-pink-200 text-gray-800 text-base md:text-lg italic leading-relaxed text-center shadow-inner mb-6" id="modal-text">
+            <!-- Content injected via JS -->
+        </div>
+        <div class="text-center">
+            <button onclick="closeLetter()" class="w-full py-3 bg-gradient-to-r from-pink-500 to-rose-500 hover:from-pink-600 hover:to-rose-600 text-white font-bold rounded-2xl shadow-md transition-all">
+                Đóng Thư ❤️
+            </button>
+        </div>
+    </div>
+</div>
+
+<!-- JavaScript Logic -->
+<script>
+    // Transition from Cover Screen to Main Site
+    function enterMainSite() {
+        const intro = document.getElementById('intro-screen');
+        const main = document.getElementById('main-content');
+
+        intro.classList.add('opacity-0');
+        setTimeout(() => {
+            intro.style.display = 'none';
+            main.classList.remove('hidden');
+            main.classList.add('flex');
+            
+            // Auto play gentle ambient music on enter
+            toggleMusic();
+        }, 700);
+    }
+
+    // Letters content
+    const lettersData = {
+        1: {
+            title: "Lá Thư 01: Tình Cảm Cao Đẹp",
+            text: "Tụi em lớp 12A2.1 dành cho cô sự yêu mến và tình yêu cao đẹp nhất.",
+            icon: "fa-envelope-open-text"
+        },
+        2: {
+            title: "Lá Thư 02: Yêu Thương & Che Chở",
+            text: "Lớp 12A2.1 vô cùng trân trọng khoảng thời gian ở bên cô. Tuy ngắn nhưng tụi em cảm nhận được từ cô sự yêu thương và che chở cho tụi em.",
+            icon: "fa-heart-circle-check"
+        },
+        3: {
+            title: "Lá Thư 03: Lời Chúc Hạnh Phúc",
+            text: "Tụi em xin kính chúc cô và gia đình hạnh phúc, phát tài, và thành công. Tụi em xin chúc cô thật hạnh phúc bên tụi em",
+            icon: "fa-gift"
+        },
+        4: {
+            title: "Lá Thư 04: Thân Tình Yêu Thương",
+            text: "Tụi em yêu cô. Cô Quỳnh Anh thân mến !",
+            icon: "fa-face-smile-hearts"
+        }
+    };
+
+    function openLetter(id) {
+        const data = lettersData[id];
+        document.getElementById('modal-title').innerText = data.title;
+        document.getElementById('modal-text').innerText = `"${data.text}"`;
+        document.getElementById('modal-icon').className = `fa-solid ${data.icon}`;
+
+        const modal = document.getElementById('letter-modal');
+        const box = document.getElementById('modal-box');
+        
+        modal.classList.remove('hidden');
+        setTimeout(() => {
+            modal.classList.remove('opacity-0');
+            box.classList.remove('scale-95');
+            box.classList.add('scale-100');
+        }, 10);
+
+        // Trigger burst of floating hearts
+        createHeartBurst();
+    }
+
+    function closeLetter() {
+        const modal = document.getElementById('letter-modal');
+        const box = document.getElementById('modal-box');
+        
+        modal.classList.add('opacity-0');
+        box.classList.remove('scale-100');
+        box.classList.add('scale-95');
+        
+        setTimeout(() => {
+            modal.classList.add('hidden');
+        }, 300);
+    }
+
+    // Floating ambient hearts generator
+    function createFloatingHeart() {
+        const container = document.getElementById('hearts-container');
+        const heart = document.createElement('div');
+        heart.className = 'floating-heart';
+        
+        const icons = ['fa-heart', 'fa-solid fa-heart', 'fa-solid fa-spa', 'fa-solid fa-leaf'];
+        const randomIcon = icons[Math.floor(Math.random() * icons.length)];
+        
+        heart.innerHTML = `<i class="${randomIcon} text-pink-400 opacity-70"></i>`;
+        
+        const size = Math.floor(Math.random() * 20) + 14;
+        heart.style.fontSize = `${size}px`;
+        
+        const startX = Math.random() * window.innerWidth;
+        heart.style.left = `${startX}px`;
+        heart.style.bottom = `-50px`;
+        
+        const duration = Math.random() * 3 + 4;
+        heart.style.animationDuration = `${duration}s`;
+        
+        container.appendChild(heart);
+        
+        setTimeout(() => {
+            heart.remove();
+        }, duration * 1000);
+    }
+
+    function createHeartBurst() {
+        for (let i = 0; i < 18; i++) {
+            setTimeout(() => {
+                createFloatingHeart();
+            }, i * 70);
+        }
+    }
+
+    setInterval(createFloatingHeart, 350);
+
+    // Gentle Ambient Web Audio Melody
+    let audioCtx = null;
+    let isPlaying = false;
+    let melodyInterval = null;
+
+    function toggleMusic() {
+        const btnText = document.getElementById('music-text');
+        const musicIcon = document.getElementById('music-icon');
+
+        if (!isPlaying) {
+            try {
+                audioCtx = new (window.AudioContext || window.webkitAudioContext)();
+                isPlaying = true;
+                if(btnText) btnText.innerText = "Tắt Nhạc (Đang Phát)";
+                if(musicIcon) musicIcon.className = "fa-solid fa-music text-rose-600 animate-bounce";
+                
+                playGentleSong();
+                melodyInterval = setInterval(playGentleSong, 8000);
+            } catch (e) {
+                console.error("Audio Context error", e);
+            }
+        } else {
+            if (audioCtx) {
+                audioCtx.close();
+            }
+            isPlaying = false;
+            clearInterval(melodyInterval);
+            if(btnText) btnText.innerText = "Phát Nhạc Chúc Mừng (Lãng Mạn)";
+            if(musicIcon) musicIcon.className = "fa-solid fa-music text-rose-500 animate-spin";
+        }
+    }
+
+    function playGentleSong() {
+        if (!isPlaying || !audioCtx) return;
+        const notes = [523.25, 587.33, 659.25, 783.99, 880.00, 1046.50];
+        const now = audioCtx.currentTime;
+
+        notes.forEach((freq, index) => {
+            if (Math.random() > 0.25) {
+                const osc = audioCtx.createOscillator();
+                const gain = audioCtx.createGain();
+
+                osc.type = 'sine';
+                osc.frequency.setValueAtTime(freq, now + index * 0.55);
+
+                gain.gain.setValueAtTime(0, now + index * 0.55);
+                gain.gain.linearRampToValueAtTime(0.08, now + index * 0.55 + 0.1);
+                gain.gain.exponentialRampToValueAtTime(0.0001, now + index * 0.55 + 1.2);
+
+                osc.connect(gain);
+                gain.connect(audioCtx.destination);
+
+                osc.start(now + index * 0.55);
+                osc.stop(now + index * 0.55 + 1.3);
+            }
+        });
+    }
+</script>
+</body>
+</html>
